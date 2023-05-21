@@ -39,3 +39,6 @@ const person3 = {
 const fruits: string[] = ['Apple', 'Banana', 'Grape']
 const fruits2: any[] = ['Apple', 'Banana', 'Grape']
 const fruits3 = ['Apple', 'Banana', 'Grape', 1]
+
+// Tuple型 配列の中身の型の順番が決まっている場合
+const book: [string, number, boolean] = ['business', 1500, false]
