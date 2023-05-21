@@ -30,4 +30,14 @@ var fruits2 = ['Apple', 'Banana', 'Grape'];
 var fruits3 = ['Apple', 'Banana', 'Grape', 1];
 // Tuple型 配列の中身の型の順番が決まっている場合
 var book = ['business', 1500, false];
-book.push(21);
+var CoffeeSize;
+(function (CoffeeSize) {
+    CoffeeSize["SHORT"] = "SHORT";
+    CoffeeSize["TALL"] = "TALL";
+    CoffeeSize["GRANDE"] = "GRANDE";
+    CoffeeSize["VENTI"] = "VENTI";
+})(CoffeeSize || (CoffeeSize = {}));
+var coffee = {
+    hot: true,
+    size: CoffeeSize.TALL
+};
