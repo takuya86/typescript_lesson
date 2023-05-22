@@ -18,7 +18,7 @@ const person: {
   name: 'Jack',
   age: 21
 }
-console.log(person.gender)
+// console.log(person.gender)
 
 // objectでも定義できるが使わない
 // const person2: object = {
@@ -39,3 +39,18 @@ const person3 = {
 const fruits: string[] = ['Apple', 'Banana', 'Grape']
 const fruits2: any[] = ['Apple', 'Banana', 'Grape']
 const fruits3 = ['Apple', 'Banana', 'Grape', 1]
+
+// Tuple型 配列の中身の型の順番が決まっている場合
+const book: [string, number, boolean] = ['business', 1500, false]
+
+enum CoffeeSize  {
+  SHORT = 'SHORT',
+  TALL = 'TALL',
+  GRANDE = 'GRANDE',
+  VENTI = 'VENTI'
+}
+
+const coffee = {
+  hot: true,
+  size: CoffeeSize.TALL
+}
