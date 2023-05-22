@@ -54,3 +54,12 @@ const coffee = {
   hot: true,
   size: CoffeeSize.TALL
 }
+
+let anything: any = true
+anything = 'hello'
+anything = ['hello', 33, true]
+anything = {}
+anything.fjiafjaj = 'fjiafjaj'
+
+let banana = 'banana'
+banana = anything
