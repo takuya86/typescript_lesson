@@ -87,3 +87,13 @@ function add(num1: number, num2: number): number {
   return num1 + num2
 }
 
+// 何も返さない場合void returnがある場合は明示的に返すことになるのでundefinedが使用可能
+function sayHello(): void {
+  console.log('Hello!')
+  return
+}
+
+console.log(sayHello())
+
+// undefind型はundefinedとnullを扱う
+let tmp: undefined
