@@ -63,3 +63,9 @@ anything.fjiafjaj = 'fjiafjaj'
 
 let banana = 'banana'
 banana = anything
+
+let unionType: number | string = 10
+// unionType.toUppercase()
+// unionType = 'hello'
+// unionType.toUppercase()
+let unionTypes: (number | string)[] = [10, 'hello']
