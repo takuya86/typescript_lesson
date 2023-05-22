@@ -69,3 +69,16 @@ let unionType: number | string = 10
 // unionType = 'hello'
 // unionType.toUppercase()
 let unionTypes: (number | string)[] = [10, 'hello']
+
+type ClothSize = 'small' | 'medium' | 'large'
+const apple = 'apple'
+
+let colothSize: ClothSize = 'large'
+
+const cloth: {
+  color: string,
+  size: ClothSize
+} = {
+  color: 'white',
+  size: 'medium'
+}
