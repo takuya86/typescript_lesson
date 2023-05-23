@@ -133,3 +133,10 @@ text = unknownInput
 if (typeof unknownInput === 'string') {
   unknownInput
 }
+
+// nerver型 ver.3から追加 消すとvoidになる
+function error(message: string): never {
+  throw new Error(message)
+}
+
+console.log(error('This is an error'))
