@@ -105,3 +105,12 @@ const anotherAdd: (n1: number, n2: number) => number = function (num1: number, n
 
 // const doublenumber = (number: number): number => number * 2
 const doublenumber: (num: number) => number  = num => num * 2
+
+// collback関数に型をつける
+function doubleAndHandle(num: number, cb: (num: number) => number): void {
+  const doubleNum = cb(num * 2)
+  console.log(num * 2)
+}
+doubleAndHandle(21, doubleNum => {
+  return doubleNum
+})
