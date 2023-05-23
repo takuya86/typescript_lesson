@@ -114,3 +114,22 @@ function doubleAndHandle(num: number, cb: (num: number) => number): void {
 doubleAndHandle(21, doubleNum => {
   return doubleNum
 })
+
+let unknownInput: unknown
+let anyInput: any
+let text: string
+// textに入らない
+unknownInput = 'hello'
+unknownInput = 21
+unknownInput = true
+text = unknownInput
+
+// any型だと入る
+// anyInput = 'hello'
+// anyInput = 21
+// anyInput = true
+// text = anyInput
+
+if (typeof unknownInput === 'string') {
+  unknownInput
+}
