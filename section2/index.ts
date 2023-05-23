@@ -97,3 +97,11 @@ console.log(sayHello())
 
 // undefind型はundefinedとnullを扱う
 let tmp: undefined
+
+// どちらにつけても良い
+const anotherAdd: (n1: number, n2: number) => number = function (num1: number, num2: number): number {
+  return num1 + num2
+}
+
+// const doublenumber = (number: number): number => number * 2
+const doublenumber: (num: number) => number  = num => num * 2
