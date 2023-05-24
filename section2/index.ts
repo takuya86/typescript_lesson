@@ -97,3 +97,46 @@ console.log(sayHello())
 
 // undefind型はundefinedとnullを扱う
 let tmp: undefined
+
+// どちらにつけても良い
+const anotherAdd: (n1: number, n2: number) => number = function (num1: number, num2: number): number {
+  return num1 + num2
+}
+
+// const doublenumber = (number: number): number => number * 2
+const doublenumber: (num: number) => number  = num => num * 2
+
+// collback関数に型をつける
+function doubleAndHandle(num: number, cb: (num: number) => number): void {
+  const doubleNum = cb(num * 2)
+  console.log(num * 2)
+}
+doubleAndHandle(21, doubleNum => {
+  return doubleNum
+})
+
+let unknownInput: unknown
+let anyInput: any
+let text: string
+// textに入らない
+unknownInput = 'hello'
+unknownInput = 21
+unknownInput = true
+text = unknownInput
+
+// any型だと入る
+// anyInput = 'hello'
+// anyInput = 21
+// anyInput = true
+// text = anyInput
+
+if (typeof unknownInput === 'string') {
+  unknownInput
+}
+
+// nerver型 ver.3から追加 消すとvoidになる
+function error(message: string): never {
+  throw new Error(message)
+}
+
+console.log(error('This is an error'))
