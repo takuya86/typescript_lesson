@@ -107,9 +107,9 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   // includeとexclude両方設定するとinclude - excludeがコンパイルされる
-  "include": [
-    "section4/class.ts"
-  ],
+  // "include": [
+  //   "section4/class.ts"
+  // ],
   "exclude": [
     // ワイルドカード **/hoge
     "**/compiler.ts",
