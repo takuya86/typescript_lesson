@@ -1,21 +1,25 @@
 class Person {
 
-  name: string
-
-  constructor(initName: string) {
-    this.name = initName
+  // protectedは継承先でも使えるがそのほかでは使えない
+  constructor(public readonly name: string, protected age: number) {
   }
 
+  incrementAge() {
+    this.age += 1
+  }
   greeting(this: Person) {
-    console.log(`Hello±! My name is ${this.name}`)
+    console.log(`Hello±! My name is ${this.name}、 I am ${this.age} yeras old`)
   }
 }
 
-let person2: Person
-const quill = new Person('Quill')
-quill.greeting
-const anotherQuill = {
-  name: 'anotherQuill',
-  greeting: quill.greeting
+class Teacher extends Person {
+  // 継承元に何か付け加えるなら必要
+  constructor(name: string, age: number, public subject: string) {
+    super(name, age)
+  }
+  greeting() {
+    console.log(`Hello±! My name is ${this.name}、 I am ${this.age} yeras old. I teach ${this.subject}`)
+  }
 }
-anotherQuill.greeting()
+const teacher = new Teacher('Quill', 38, 'Math')
+teacher.greeting()
