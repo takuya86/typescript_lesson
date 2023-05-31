@@ -8,13 +8,11 @@
 //   follower: number
 // }
 interface Engineer {
-  kibd: 'engineer',
   name: string,
   role: string,
 }
 
 interface Blogger {
-  kibd: 'blogger',
   name: string,
   follower: number,
 }
@@ -85,3 +83,4 @@ havePet(new Bird())
 // これではNG
 // havePet({ speak() { console.log('hello') }, fly() { console.log('not bird') }})
 
+const input = document.getElementById('input')
