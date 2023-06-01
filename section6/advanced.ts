@@ -33,7 +33,7 @@ type NumberBoolean = number | boolean
 type Stringnumber = string | number
 type Mix = NumberBoolean & Stringnumber
 
-// 関数オーバーロード
+// 関数オーバーロード 上から順に適応
 function toUpperCase(x: string): string
 function toUpperCase(x: number): number
 // 関数のオーバーロードをした場合下記部分は認識しなくなる
@@ -47,7 +47,13 @@ function toUpperCase(x: string | number): string | number {
 }
 
 // 関数オーバーロード
-const upperHello = toUpperCase('hello')
+// const upperHello = toUpperCase('hello')
+// const upperHello = toUpperCase
+interface TmpFunc {
+  (x: string): number
+  (x: number): number
+}
+const upperHello: TmpFunc = function (x: string) { return 0 }
 
 type NomadWorker = Engineer | Blogger
 function desribeProfile(nomadWorker: NomadWorker) {
@@ -173,3 +179,4 @@ target = source
 // let target2: 'hello' = 'hello'
 // let source2: string = 'hellohello'
 // target2 = source2
+
