@@ -53,7 +53,21 @@ interface TmpFunc {
   (x: string): number
   (x: number): number
 }
-const upperHello: TmpFunc = function (x: string) { return 0 }
+const upperHello: TmpFunc = function (x: string | number) { return 0 }
+
+interface FuncA {
+  (a: number, b: string): number
+  (a: string, b: number): number
+}
+interface FuncB {
+  (a: string): number
+}
+
+// オーバーロードされる順番が変わる
+let intersectinoFunc: FuncA & FuncB
+// let intersectinoFunc: FuncB & FuncA
+intersectinoFunc = function(a: number | string, b?: number | string) { return 0 }
+
 
 type NomadWorker = Engineer | Blogger
 function desribeProfile(nomadWorker: NomadWorker) {
