@@ -55,19 +55,29 @@ interface TmpFunc {
 }
 const upperHello: TmpFunc = function (x: string | number) { return 0 }
 
+// interface FuncA {
+//   (a: number, b: string): number
+//   (a: string, b: number): number
+// }
+// interface FuncB {
+//   (a: string): number
+// }
+
+// // オーバーロードされる順番が変わる
+// let intersectinoFunc: FuncA & FuncB
+// // let intersectinoFunc: FuncB & FuncA
+// intersectinoFunc = function(a: number | string, b?: number | string) { return 0 }
 interface FuncA {
   (a: number, b: string): number
-  (a: string, b: number): number
 }
 interface FuncB {
-  (a: string): number
+  (a: string): string
 }
 
-// オーバーロードされる順番が変わる
-let intersectinoFunc: FuncA & FuncB
-// let intersectinoFunc: FuncB & FuncA
-intersectinoFunc = function(a: number | string, b?: number | string) { return 0 }
-
+let unionFunc: FuncA | FuncB
+// ユニオン型だとどちらも入れれなくなる
+unionFunc = function(a: string) { return 'hi'}
+unionFunc()
 
 type NomadWorker = Engineer | Blogger
 function desribeProfile(nomadWorker: NomadWorker) {
