@@ -204,3 +204,21 @@ target = source
 // let source2: string = 'hellohello'
 // target2 = source2
 
+// レストパラメーターにタプル型
+// function advancedFn(...args: readonly [number, string, boolean?, ...number[]]) {
+// }
+function advancedFn(...args: readonly number[]) {
+}
+advancedFn(0, 1)
+
+const milk = 'milk' as const
+let drink = milk
+
+const array = [10, 20] as const
+const perter = {
+  name: 'Perter',
+  age: 38
+} as const
+
+// typeofの後で値を入れると値の型を取得する
+type PerterType = typeof perter
