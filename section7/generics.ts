@@ -38,3 +38,5 @@ const stringLightDatabase = new LightDatabase<string>()
 stringLightDatabase.add('Apple')
 stringLightDatabase.add('Banana')
 stringLightDatabase.add('Grape')
+
+console.log(stringLightDatabase)
