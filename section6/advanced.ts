@@ -77,7 +77,7 @@ interface FuncB {
 let unionFunc: FuncA | FuncB
 // ユニオン型だとどちらも入れれなくなる
 unionFunc = function(a: string) { return 'hi'}
-unionFunc()
+// unionFunc()
 
 type NomadWorker = Engineer | Blogger
 function desribeProfile(nomadWorker: NomadWorker) {

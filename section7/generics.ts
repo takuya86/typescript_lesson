@@ -85,3 +85,5 @@ type ConditionalTypesInfer = { tomato: 'tomato' } extends { tomato: infer R } ? 
 type DistributiveConstionalTypes<T> = T extends 'tomato' ? number : boolean
 let Genericstmp4: DistributiveConstionalTypes<'tomato' | 'pumpkin'>
 let Genericstmp5: NonNullable<string | null>
+
+
