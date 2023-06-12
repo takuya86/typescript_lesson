@@ -92,7 +92,7 @@ let text;
 unknownInput = 'hello';
 unknownInput = 21;
 unknownInput = true;
-text = unknownInput;
+// text = unknownInput
 // any型だと入る
 // anyInput = 'hello'
 // anyInput = 21
