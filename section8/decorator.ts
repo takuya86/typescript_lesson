@@ -31,26 +31,63 @@ function Componet(template: string, selector: string) {
 //   console.log(constructor)
 // }
 
-function PropertyLoggin(target: any, propertyKey: string) {
+function PropertyLogging(target: any, propertyKey: string) {
   console.log('propertyLoging')
   console.log(target)
   console.log(propertyKey)
   // returnではなにも返せない
+}
+// メソッドデコレーター
+function MethodLogging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  console.log('methodLoging')
+  console.log(target)
+  console.log(propertyKey)
+  console.log(descriptor)
+}
+function enumerable(isEnumerable: boolean) {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    return {
+      enumerable: isEnumerable
+    }
+  }
+}
+// アクセッサーデコレーター
+function AccessorLogging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  console.log('AccessorLoging')
+  console.log(target)
+  console.log(propertyKey)
+  console.log(descriptor)
+}
+// パラメーターデコレーター
+function ParameterLogging(target: any, propertyKey: string, parameterIndex: number) {
+  console.log('ParameterLoging')
+  console.log(target)
+  console.log(propertyKey)
 }
 
 @Componet('<h1.{{ name }} </h1>', '#app')
 // class定義時に実行されている
 @Logging('Logging User')
 class User {
-  @PropertyLoggin
+  @PropertyLogging
   name = 'Quill'
-  constructor(public age: number) {
+  constructor(public _age: number) {
     console.log('User was created!')
   }
-  greeting() {
-    console.log('hello')
+  get age() {
+    return this._age
+  }
+  set age(value) {
+    this._age = value
+  }
+  @enumerable(false)
+  @MethodLogging
+  greeting(@ParameterLogging message: string) {
+    console.log(message)
   }
 }
 const user1 = new User(32)
 const user2 = new User(32)
 const user3 = new User(32)
+
+
