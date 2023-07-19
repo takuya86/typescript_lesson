@@ -62,3 +62,5 @@ class Foods {
   }
 }
 const foods = Foods.getInstatce
+
+console.log('test')
