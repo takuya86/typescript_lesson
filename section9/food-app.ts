@@ -62,7 +62,3 @@ class Foods {
   }
 }
 const foods = Foods.getInstatce
-
-
-
-
